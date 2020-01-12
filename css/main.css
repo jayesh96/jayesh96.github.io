@@ -275,7 +275,7 @@ body {
 }
 
 .section-one {
-  height: 100vh;
+  height: calc(100vh - 30px);
   background: white;
   display: inline-block;
   width: 100vw;
@@ -360,7 +360,6 @@ body {
 .navbar {
   font-size: 18px;
   background-color: white;
-  padding-bottom: 10px;
 }
 
 .main-nav {
@@ -409,6 +408,11 @@ body {
 
 .hero-outer-right {
   display: none;
+}
+
+.section-bottom {
+  height: 20px;
+  background: #a1affd;
 }
 
 @media screen and (min-width: 768px) {
