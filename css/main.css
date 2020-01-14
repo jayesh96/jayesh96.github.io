@@ -270,7 +270,7 @@ textarea {
 }
 
 body {
-  background: #1b242f;
+  background: white;
   color: black;
 }
 
@@ -361,6 +361,10 @@ body {
   font-size: 18px;
   background-color: white;
   padding-bottom: 10px;
+  position: absolute;
+  width:100vW;
+  z-index: 1;
+  opacity: 1;
 
 }
 
@@ -380,6 +384,10 @@ body {
 }
 .active {
   display: block;
+  height:100vH;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 .black {
   color: black;
