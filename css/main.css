@@ -17,6 +17,7 @@ html {
   line-height: 1.4;
   box-sizing: border-box;
   font-family: "Roboto", sans-serif;
+  height: 100%;
 }
 
 /*
@@ -275,8 +276,16 @@ body {
 }
 
 .section-one {
-  height: calc(100vh - 30px);
+  height: calc(100vh);
   background: white;
+  display: inline-block;
+  width: 100vw;
+  color: #232323;
+}
+
+.section-two {
+  height: 100%;
+  background: #f5f4f4;
   display: inline-block;
   width: 100vw;
   color: #232323;
@@ -362,10 +371,9 @@ body {
   background-color: white;
   padding-bottom: 10px;
   position: absolute;
-  width:100vW;
+  width: 100vw;
   z-index: 1;
   opacity: 1;
-
 }
 
 .main-nav {
@@ -382,13 +390,13 @@ body {
   margin-top: 10px;
   margin-left: 20px;
 }
-.active {
+.navar-active {
   display: block;
-  height:100vH;
+  height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  padding:0;
+  padding: 0;
   margin: 0;
 }
 
@@ -428,14 +436,19 @@ body {
   background: #a1affd;
 }
 
-@media screen and (min-width: 768px) {
+/* 
+  ##Device = Desktops
+  ##Screen = 1281px to higher resolution desktops
+*/
+
+@media (min-width: 1281px) {
   .section-one {
-    height: calc(100vh - 70px);
+    height: calc(100vh - 30px);
   }
   .navbar {
     display: flex;
     justify-content: space-between;
-    padding:0px;
+    padding: 0px;
     height: 70px;
     align-items: center;
   }
@@ -477,14 +490,44 @@ body {
   }
   .hero-image {
     margin: 0px auto;
-    position: relative;
+    position: absolute;
+    top: 15%;
+    right: 0;
     width: fit-content;
   }
   .hero-image > img {
-    width: 300px;
-    border-radius: 30%;
+    width: 500px;
   }
   .hero-image-mobile {
     display: none;
   }
 }
+
+/* 
+  ##Device = Laptops, Desktops
+  ##Screen = B/w 1025px to 1280px
+*/
+
+@media (min-width: 1025px) and (max-width: 1280px) {
+}
+
+/* 
+  ##Device = Tablets, Ipads (portrait)
+  ##Screen = B/w 768px to 1024px
+*/
+
+@media (min-width: 768px) and (max-width: 1024px) {
+}
+
+/* 
+  ##Device = Tablets, Ipads (landscape)
+  ##Screen = B/w 768px to 1024px
+*/
+
+@media (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
+}
+
+/* 
+  ##Device = Low Resolution Tablets, Mobiles (Landscape)
+  ##Screen = B/w 481px to 767px
+*/
