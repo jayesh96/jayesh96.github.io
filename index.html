@@ -20,6 +20,10 @@
       rel="stylesheet"
       href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
     />
+    <script
+      src="https://kit.fontawesome.com/5627a90583.js"
+      crossorigin="anonymous"
+    ></script>
 
     <meta name="theme-color" content="#fafafa" />
   </head>
@@ -36,8 +40,8 @@
     <!-- Add your site or application content here -->
     <div class="main">
       <nav class="navbar">
-        <span class="navbar-toggle" id="js-navbar-toggle">
-          <i class="fa fa-bars black"></i>
+        <span class="navbar-toggle noSelect" id="js-navbar-toggle">
+          <i class="fa fa-bars black rotate "></i>
         </span>
         <a href="#" class="logo"></a>
         <ul class="main-nav" id="js-menu">
@@ -70,6 +74,28 @@
             <div class="introduction-button">
               Contact Me
             </div>
+            <div class="social-icons">
+              <i
+                class="icon fab fa-github"
+                onclick="socialMediaRedirect('http://jayesh96.github.io/')"
+              ></i>
+              <i
+                class="icon fab fa-facebook-f"
+                onclick="socialMediaRedirect('https://www.facebook.com/jai.bidani')"
+              ></i>
+              <i
+                class="icon fab fa-linkedin-in"
+                onclick="socialMediaRedirect('https://www.linkedin.com/in/jayesh-bidani-146391b7/')"
+              ></i>
+              <i
+                class="icon fab fa-twitter"
+                onclick="socialMediaRedirect('https://twitter.com/jai_bidani96')"
+              ></i>
+              <i
+                class="icon fab fa-instagram"
+                onclick="socialMediaRedirect('https://www.instagram.com/jayesh.bidani/')"
+              ></i>
+            </div>
           </div>
         </div>
         <div class="hero-outer-right">
@@ -79,11 +105,11 @@
             </div>
           </div>
         </div>
-        <!-- <div class="section-bottom">
-          
-          </div> -->
       </div>
-      <div class="section section-two">Section 2</div>
+      <!-- HERE ENDS SECTION ONE -->
+
+      <!-- SECTION TWO STARTS HERE -->
+      <div class="section section-two"></div>
       <!-- <div class="section section-three">Main</div>
       <div class="section section-four">Section 5</div>
       <div class="section section-five">Footer</div>  -->
@@ -102,7 +128,14 @@
     </script>
     <script src="js/plugins.js"></script>
     <script src="js/main.js"></script>
-
+    <script>
+      $(".rotate").click(function() {
+        $(this).toggleClass("down");
+      });
+      function socialMediaRedirect(url) {
+        window.open(url);
+      }
+    </script>
     <!-- Google Analytics: change UA-XXXXX-Y to be your site's ID. -->
     <script>
       window.ga = function() {

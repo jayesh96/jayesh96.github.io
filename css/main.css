@@ -10,6 +10,9 @@
 /* ==========================================================================
    Base styles: opinionated defaults
    ========================================================================== */
+* {
+  box-sizing: border-box;
+}
 
 html {
   color: #222;
@@ -275,6 +278,10 @@ body {
   color: black;
 }
 
+.section {
+  position: relative;
+}
+
 .section-one {
   height: calc(100vh);
   background: white;
@@ -284,8 +291,8 @@ body {
 }
 
 .section-two {
-  height: 100%;
-  background: #f5f4f4;
+  height: 100vh;
+  background: #a1affd;
   display: inline-block;
   width: 100vw;
   color: #232323;
@@ -432,8 +439,46 @@ body {
 }
 
 .section-bottom {
-  height: 20px;
+  /* height: 20px; */
   background: #a1affd;
+}
+
+.social-icons {
+  text-align: center;
+  line-height: 100px;
+  font-size: 16px;
+}
+
+.icon {
+  padding-left: 8px;
+}
+
+.icon:hover {
+  color: #899af9;
+  font-size: 24px;
+}
+
+.rotate {
+  -moz-transition: all 0.2s linear;
+  -webkit-transition: all 0.2s linear;
+  transition: all 0.2s linear;
+}
+
+.rotate.down {
+  -ms-transform: rotate(90deg);
+  -moz-transform: rotate(90deg);
+  -webkit-transform: rotate(90deg);
+  transform: rotate(90deg);
+}
+
+.noSelect {
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  -webkit-tap-highlight-color: transparent;
 }
 
 /* 
@@ -442,9 +487,6 @@ body {
 */
 
 @media (min-width: 1281px) {
-  .section-one {
-    height: calc(100vh - 30px);
-  }
   .navbar {
     display: flex;
     justify-content: space-between;
