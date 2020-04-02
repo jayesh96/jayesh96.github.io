@@ -1,7 +1,14 @@
-let mainNav = document.getElementById('js-menu');
-let navBarToggle = document.getElementById('js-navbar-toggle');
+let mainNav = document.getElementById("js-menu");
 
-navBarToggle.addEventListener('click', function () {
-    
-    mainNav.classList.toggle('navar-active');
+$("#js-navbar-toggle").on("click", function() {
+  mainNav.classList.toggle("navar-active");
+});
+
+$(function() {
+  var navMain = $("#js-menu"); // avoid dependency on #id
+  // "a:not([data-toggle])" - to avoid issues caused
+  // when you have dropdown inside navbar
+  navMain.on("click", "a", null, function() {
+    $("#js-navbar-toggle").click();
+  });
 });

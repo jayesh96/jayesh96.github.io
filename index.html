@@ -16,14 +16,12 @@
 
     <link rel="stylesheet" href="css/normalize.css" />
     <link rel="stylesheet" href="css/main.css" />
-    <link
-      rel="stylesheet"
-      href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
-    />
-    <script
-      src="https://kit.fontawesome.com/5627a90583.js"
-      crossorigin="anonymous"
-    ></script>
+    <link rel="stylesheet" href="css/swipecards.css" />
+    <!-- <link rel="stylesheet" href="css/labs.css" />-->
+    <link rel="stylesheet" href="css/masonry.css" /> 
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+    <link rel="stylesheet" type="text/css" href="https://kenwheeler.github.io/slick/slick/slick-theme.css
+    "/>
 
     <meta name="theme-color" content="#fafafa" />
   </head>
@@ -49,14 +47,14 @@
             <a href="#" class="nav-links">About</a>
           </li>
           <li>
-            <a href="#" class="nav-links">Work Experience</a>
+            <a href="#experience" class="nav-links">Work Experience</a>
           </li>
           <li>
-            <a href="#" class="nav-links">Projects</a>
+            <a href="#projects" class="nav-links">Projects</a>
           </li>
         </ul>
       </nav>
-      <div class="section section-one">
+      <div class="section section-one" id="main">
         <div class="hero-outer">
           <div class="hero-inner">
             <div class="hero-image-mobile">
@@ -67,7 +65,7 @@
               <br /><span class="name thin">
                 I am <span class="bold">Jayesh Bidani</span>
               </span>
-              <br /><span class="profile thin">
+              <br /><span class="profile thin desc">
                 Full Stack JS Developer
               </span>
             </div>
@@ -109,25 +107,40 @@
       <!-- HERE ENDS SECTION ONE -->
 
       <!-- SECTION TWO STARTS HERE -->
-      <div class="section section-two"></div>
-      <!-- <div class="section section-three">Main</div>
-      <div class="section section-four">Section 5</div>
-      <div class="section section-five">Footer</div>  -->
+     <div class="section section-two align-center" id='experience'> 
+      <h2 class="name thin ">Experience?</h2>
+      <h2 class="desc purple-color">As a software developer, I had the opportunity to work with many early stage as well as funded startups.</h2>
+      <div id="stacked-cards-block" class="stackedcards stackedcards--animatable init">
+  <div class="stackedcards-container">
+    <div class="card-item">
+        
     </div>
-    <script src="js/vendor/modernizr-3.8.0.min.js"></script>
+    <div class="card-item"></div>
+    <div class="card-item"></div>
+    <div class="card-item"></div>
+    <div class="card-item"></div>
+    <div class="card-item"></div>
+    <div class="card-item"></div>
+  </div>
+  <!-- <div class="stackedcards--animatable stackedcards-overlay top">TOP</div>
+  <div class="stackedcards--animatable stackedcards-overlay right">RIGHT</div>
+  <div class="stackedcards--animatable stackedcards-overlay left">LEFT</div> -->
+</div>
+
+
+     <script src="js/vendor/modernizr-3.8.0.min.js"></script>
     <script
       src="https://code.jquery.com/jquery-3.4.1.min.js"
       integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
       crossorigin="anonymous"
     ></script>
-    <script>
-      window.jQuery ||
-        document.write(
-          '<script src="js/vendor/jquery-3.4.1.min.js"><\/script>'
-        );
-    </script>
-    <script src="js/plugins.js"></script>
+    <script src="js/plugins.js"></script> 
     <script src="js/main.js"></script>
+    <script src="js/swipecards.js"></script>
+    <script
+      src="https://kit.fontawesome.com/5627a90583.js"
+      crossorigin="anonymous"
+    ></script>
     <script>
       $(".rotate").click(function() {
         $(this).toggleClass("down");
@@ -136,8 +149,18 @@
         window.open(url);
       }
     </script>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     <!-- Google Analytics: change UA-XXXXX-Y to be your site's ID. -->
-    <script>
+    <!-- <script>
       window.ga = function() {
         ga.q.push(arguments);
       };
@@ -147,6 +170,6 @@
       ga("set", "transport", "beacon");
       ga("send", "pageview");
     </script>
-    <script src="https://www.google-analytics.com/analytics.js" async></script>
+    <script src="https://www.google-analytics.com/analytics.js" async></script> -->
   </body>
 </html>
