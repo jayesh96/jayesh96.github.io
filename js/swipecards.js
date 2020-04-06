@@ -7,7 +7,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
 		var rotate = true; //Activate the elements' rotation for each move on stacked cards.
 		var items = 3; //Number of visible elements when the stacked options are bottom or top.
 		var elementsMargin = 10; //Define the distance of each element when the stacked options are bottom or top.
-		var useOverlays = false; //Enable or disable the overlays for swipe elements.
+		var useOverlays = true; //Enable or disable the overlays for swipe elements.
 		var maxElements; //Total of stacked cards on DOM.
 		var currentPosition = 0; //Keep the position of active stacked card.
 		var velocity = 0.3; //Minimum velocity allowed to trigger a swipe.

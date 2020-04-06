@@ -14,6 +14,8 @@
 
 .stackedcards {
   position: relative;
+  max-width: 327px;
+  margin: 0 auto;
 }
 
 .stackedcards * {
@@ -82,7 +84,7 @@
 }
 
 .stackedcards-overlay.right {
-  background: #7bb3c5;
+  background: #55ef7e;
 }
 
 .stackedcards-overlay.left {
@@ -134,6 +136,6 @@
 
 /* elements on stacked cards */
 .card-item {
-  background: #ffffff;
+  background: #f7f7f7;
   height: 500px;
 }

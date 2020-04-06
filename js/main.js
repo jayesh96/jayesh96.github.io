@@ -10,5 +10,15 @@ $(function() {
   // when you have dropdown inside navbar
   navMain.on("click", "a", null, function() {
     $("#js-navbar-toggle").click();
+    mainNav.classList.toggle("navar-active");
+    $(".rotate").click();
   });
 });
+
+$(".rotate").click(function() {
+  $(this).toggleClass("down");
+});
+
+function socialMediaRedirect(url) {
+  window.open(url);
+}
