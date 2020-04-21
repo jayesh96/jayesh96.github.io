@@ -387,6 +387,7 @@ footer {
   height: 20px;
   line-height: 20px;
   text-align: center;
+  margin-top: 20px;
 }
 
 .red {
@@ -412,9 +413,9 @@ footer {
   font-size: 18px;
   background-color: white;
   padding-bottom: 10px;
-  position: absolute;
+  position: fixed;
   width: 100vw;
-  z-index: 1;
+  z-index: 9999;
   opacity: 1;
 }
 .main {
