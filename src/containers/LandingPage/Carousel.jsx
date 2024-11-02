@@ -9,15 +9,27 @@ gsap.registerPlugin(ScrollTrigger);
 gsap.registerPlugin(Draggable);
 
 const domain = "https://sunny-queijadas-ed4025.netlify.app/images/";
+// const domain = "src/assets/images/";
 
 const images = [
-    "jayesh.JPG",
-    "experience.webp",
-    "projects.webp",
-    "hobbies.webp",
+    "india.webp",
+    "thailand.webp",
+    "singapore.webp",
+    "malaysia.webp",
+    "indonesia.webp",
+    "vietnam.webp",
+    "ireland.webp",
+    "netherlands.webp",
+    "germany.webp",
+    "austria.webp",
+    "hungary.webp",
+    "czech.webp",
+    "slovenia.webp",
+    "croatia.webp",
+    "switzerland.webp",
+    "italy.webp",
+    "vatican.webp",
 ];
-
-const TITLES = ["About Me", "Experience", "Projects", "Hobbies"];
 
 const Carousel = () => {
     const run = () => {
@@ -52,7 +64,7 @@ const Carousel = () => {
                             "rotation"
                         );
                         let newRotation =
-                            currentRotation + (delay > 0 ? -1 : 1);
+                            currentRotation + (delay > 0 ? -0.2 : 0.2);
 
                         if (newRotation < -15 || newRotation > 15) {
                             newRotation = getRandomDegree(0, 0);

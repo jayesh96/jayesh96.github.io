@@ -93,7 +93,7 @@ const Navbar = () => {
                 </div>
 
                 <button onClick={toggleNavbar} className="font-custom">
-                    JAYESH BIDANI
+                    LetskiptheQ
                 </button>
             </section>
         </>

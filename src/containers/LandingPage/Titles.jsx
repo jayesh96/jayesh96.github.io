@@ -7,8 +7,25 @@ import { run } from "./utils";
 gsap.registerPlugin(ScrollTrigger);
 gsap.registerPlugin(Draggable);
 
-const TITLES = ["About Me", "Experience", "Projects", "Hobbies"];
-
+const TITLES = [
+    "India",
+    "Thailand",
+    "Singapore",
+    "Malaysia",
+    "Indonesia",
+    "Vietnam",
+    "Ireland",
+    "Netherlands",
+    "Germany",
+    "Austria",
+    "Hungary",
+    "Czech",
+    "Slovenia",
+    "Croatia",
+    "Switzerland",
+    "Italy",
+    "Vatican City",
+];
 const Titles = () => {
     const callback = () => {
         gsap.set("#titles-container", { scale: 1.2, duration: 1 });
@@ -31,7 +48,10 @@ const Titles = () => {
                             <div className="title position-absolute h-100 w-100 overflow-hidden display-flex m-4">
                                 <div className="title-display flex flex-row">
                                     <div className="pt-2 mr-10">
-                                        <span>0{index + 1}</span>
+                                        <span>
+                                            {index < 9 ? 0 : ""}
+                                            {index + 1}
+                                        </span>
                                     </div>
                                     <a
                                         className="text-9xl caveat-new "
