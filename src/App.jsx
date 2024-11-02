@@ -1,14 +1,16 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
+import { BrowserRouter } from "react-router-dom";
+import AppRoutes from "./routes";
+
 import Navbar from "./Navbar";
-import LandingPage from "./containers/LandingPage/index.jsx";
 import "./index.css";
 
 const App = () => {
     return (
-        <>
+        <BrowserRouter>
             <Navbar />
-            <LandingPage />
-        </>
+            <AppRoutes />
+        </BrowserRouter>
     );
 };
 

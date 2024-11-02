@@ -1,5 +1,7 @@
 import { gsap } from "gsap";
 import { Draggable } from "gsap/Draggable";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { getRandomDegree } from "../../utils";
 
 const horizontalLoop = (items, config) => {
     items = gsap.utils.toArray(items);
@@ -102,7 +104,6 @@ const horizontalLoop = (items, config) => {
             time += tl.duration() * (index > curIndex ? 1 : -1);
         }
         curIndex = newIndex;
-        setCurrentIndex(curIndex);
         vars.overwrite = true;
         return tl.tweenTo(time, vars);
     }
@@ -170,4 +171,47 @@ const horizontalLoop = (items, config) => {
     return tl;
 };
 
-export { horizontalLoop };
+const motion = (delay, loop) => {
+    let progressWrap = gsap.utils.wrap(0, 1);
+
+    loop.draggable.tween && loop.draggable.tween.kill();
+
+    gsap.to(loop, {
+        progress: `+=${delay * 0.001}`,
+        overwrite: true,
+        modifiers: {
+            progress: progressWrap,
+        },
+    });
+};
+
+const run = (itemsClass, cb) => {
+    const boxes = gsap.utils.toArray(itemsClass);
+    const loop = horizontalLoop(boxes, { paused: true, draggable: true });
+
+    boxes.forEach((box, i) =>
+        box.addEventListener("click", () =>
+            loop.toIndex(i, { duration: 0.8, ease: "power1.inOut" })
+        )
+    );
+
+    let touchstartX = 0;
+    let touchendX = 0;
+
+    document.addEventListener("touchstart", (e) => {
+        touchstartX = e.changedTouches[0].screenX;
+    });
+
+    document.addEventListener("touchend", () => {
+        touchendX = e.changedTouches[0].screenX;
+
+        let deltaY = touchendX - touchstartX;
+        motion(deltaY, loop);
+    });
+
+    document.addEventListener("wheel", (e) => motion(e.deltaY, loop));
+
+    cb();
+};
+
+export { horizontalLoop, run };
