@@ -44,17 +44,17 @@ const Titles = () => {
 
     return (
         <div
-            className="absolute h-full w-full info-container top-0 opacity-0"
+            className="absolute h-full w-full info-container top-0 opacity-0 hidden md:block"
             id="info-container"
         >
             <div
-                className="grid grid-cols-12 bottom-0 gap-x-5 absolute w-full titles w-full position-absolute left-0 bottom-0 my-12"
+                className="grid grid-cols-12 gap-x-5 absolute w-full titles w-full position-absolute left-0 my-12"
                 style={{ alignItems: "center" }}
             >
                 <div className="info-container h-20 col-start-9 col-end-12 row-start-9 row-end-10 position-relative display-block overflow-hidden ">
                     {TITLES.map((title, index) => {
                         return (
-                            <div className="info position-absolute overflow-hidden display-flex m-4">
+                            <div className="info position-absolute overflow-hidden display-flex m-8">
                                 <div
                                     className="info-display flex flex-row"
                                     style={{ justifyContent: "end" }}

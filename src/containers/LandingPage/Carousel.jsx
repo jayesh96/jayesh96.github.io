@@ -12,6 +12,7 @@ const domain = "https://sunny-queijadas-ed4025.netlify.app/images/";
 // const domain = "src/assets/images/";
 
 const images = [
+    "vatican.webp",
     "india.webp",
     "thailand.webp",
     "singapore.webp",
@@ -28,7 +29,6 @@ const images = [
     "croatia.webp",
     "switzerland.webp",
     "italy.webp",
-    "vatican.webp",
 ];
 
 const Carousel = () => {
@@ -112,7 +112,7 @@ const Carousel = () => {
                     {images.map((x, index) => {
                         return (
                             <>
-                                <div className="box h-1/3 md:h-2/3  cursor-pointer p-4 md:p-8">
+                                <div className="box h-2/5 md:h-2/3  cursor-pointer p-4 md:p-8">
                                     <img
                                         src={domain + x}
                                         className="image"

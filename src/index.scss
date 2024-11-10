@@ -1,0 +1,81 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.oswald-new {
+    font-family: "Oswald", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 200,300, 400, 500, 600, 700;
+    font-style: normal;
+  }
+
+  
+:root {
+    --orange-dull: #CF4C2E;
+}
+
+* {
+    font-family: "Oswald", sans-serif;
+    font-weight: 300;
+
+}
+
+#root{
+    display: block;
+    width: 100vw;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    overflow-y: hidden;
+    overflow-x: hidden;
+    overscroll-behavior: none;
+    position: fixed;
+    
+}
+
+
+.box{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.header-btn{
+    position: fixed;
+    width: 100%;
+    max-width: 100%;
+    top: 6.4vw;
+    left: 0;
+    padding: 0 6.4vw;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: space-between;
+}
+
+.box{
+    transform-origin: 50% 50%;
+}
+
+.titles{
+    top: 20rem;
+    font-size: 3.75rem;
+    height: 6rem;
+
+    @media (min-width: 768px) {
+        top: calc(100vH - 32rem);
+    }
+
+    @media (min-width: 1024px) {
+        font-size: 6rem;
+        height: 8rem;
+    }
+
+    @media (min-width: 1536px) {
+        font-size: 10rem;
+        height: 12rem;
+    }
+
+    
+    
+}
