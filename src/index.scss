@@ -5,22 +5,20 @@
 .oswald-new {
     font-family: "Oswald", sans-serif;
     font-optical-sizing: auto;
-    font-weight: 200,300, 400, 500, 600, 700;
+    font-weight: 200, 300, 400, 500, 600, 700;
     font-style: normal;
-  }
+}
 
-  
 :root {
-    --orange-dull: #CF4C2E;
+    --orange-dull: #cf4c2e;
 }
 
 * {
     font-family: "Oswald", sans-serif;
     font-weight: 300;
-
 }
 
-#root{
+#root {
     display: block;
     width: 100vw;
     height: 100vh;
@@ -30,18 +28,16 @@
     overflow-x: hidden;
     overscroll-behavior: none;
     position: fixed;
-    
 }
 
-
-.box{
+.box {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
 }
 
-.header-btn{
+.header-btn {
     position: fixed;
     width: 100%;
     max-width: 100%;
@@ -53,17 +49,17 @@
     justify-content: space-between;
 }
 
-.box{
+.box {
     transform-origin: 50% 50%;
 }
 
-.titles{
+.titles {
     top: 20rem;
     font-size: 3.75rem;
     height: 6rem;
 
     @media (min-width: 768px) {
-        top: calc(100vH - 32rem);
+        top: calc(100vh - 32rem);
     }
 
     @media (min-width: 1024px) {
@@ -76,6 +72,21 @@
         height: 12rem;
     }
 
-    
-    
+    .title {
+        display: flex;
+        justify-content: center;
+        background: #ffffff54;
+        border-bottom-width: 0px;
+        border: 2px solid orangered;
+        border-bottom-width: 0;
+        border-top-width: 0;
+    }
+}
+
+#info-container {
+    max-height: 64px;
+    position: absolute;
+    overflow: hidden;
+    bottom: 12rem;
+    right: 16rem;
 }

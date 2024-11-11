@@ -93,7 +93,11 @@ const Navbar = () => {
                 </div>
 
                 <button onClick={toggleNavbar} className="font-custom">
-                    LetskiptheQ
+                    <img
+                        src={"src/assets/letskiptheQ-nobg.png"}
+                        width={"100"}
+                        height={"100"}
+                    />
                 </button>
             </section>
         </>

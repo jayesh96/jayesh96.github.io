@@ -9,24 +9,6 @@ gsap.registerPlugin(ScrollTrigger);
 gsap.registerPlugin(Draggable);
 
 const Titles = () => {
-    const containerRef = useRef(null);
-    const [containerHeight, setContainerHeight] = useState("auto");
-
-    useEffect(() => {
-        if (containerRef.current) {
-            // Get the computed font size of the container
-            const computedStyle = getComputedStyle(containerRef.current);
-            const fontSize = parseFloat(computedStyle.fontSize); // Convert font size to a number
-
-            // Set the height based on the font size
-            const multiplier = 5; // Adjust multiplier based on desired height relative to font size
-            const height = fontSize * multiplier;
-
-            console.log(height);
-            setContainerHeight(height);
-        }
-    }, [containerRef.current]);
-
     const callback = () => {
         gsap.set("#titles-container", { scale: 1.2, duration: 1 });
         gsap.to("#titles-container", { duration: 1, scale: 1 });
@@ -38,7 +20,7 @@ const Titles = () => {
 
     return (
         <div
-            className="absolute h-full w-full top-0 left-0 titles-container block"
+            className="absolute h-full w-full top-0 left-0 titles-container block z-10"
             id="titles-container"
         >
             <div className="grid grid-cols-12 gap-x-5 absolute w-full titles w-full position-absolute left-0">

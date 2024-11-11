@@ -23,7 +23,7 @@ const COUNTRIES = [
     },
     ,
     {
-        name: "Indoneisa",
+        name: "Indonesia",
         url: "indonesia.webp",
         description: "",
     },
@@ -65,7 +65,7 @@ const COUNTRIES = [
     },
     ,
     {
-        name: "Czech Republic",
+        name: "Czech",
         url: "czech.webp",
         description: "",
     },
@@ -90,7 +90,7 @@ const COUNTRIES = [
         description: "",
     },
     {
-        name: "Vatican City",
+        name: "Vatican",
         url: "vatican.webp",
         description: "",
     },

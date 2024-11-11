@@ -3,7 +3,9 @@ import { Draggable } from "gsap/Draggable";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { getRandomDegree } from "../../utils";
 
-const horizontalLoop = (items, config) => {
+let height = 0;
+
+const horizontalLoop = (items, config, itemsClass, meta) => {
     items = gsap.utils.toArray(items);
     config = config || {};
     let tl = gsap.timeline({
@@ -111,106 +113,83 @@ const horizontalLoop = (items, config) => {
     tl.previous = (vars) => toIndex(curIndex - 1, vars);
     tl.current = () => curIndex;
     tl.toIndex = (index, vars) => toIndex(index, vars);
-    tl.updateIndex = () =>
-        (curIndex = Math.round(tl.progress() * items.length));
+    tl.updateIndex = () => {
+        curIndex = Math.round(tl.progress() * items.length);
+        console.log(curIndex);
+    };
+
     tl.times = times;
     tl.progress(1, true).progress(0, true);
-    if (config.reversed) {
-        tl.vars.onReverseComplete();
-        tl.reverse();
-    }
-    if (config.draggable && typeof Draggable === "function") {
-        let proxy = document.createElement("div"),
-            wrap = gsap.utils.wrap(0, 1),
-            ratio,
-            startProgress,
-            draggable,
-            dragSnap,
-            roundFactor,
-            align = () =>
-                tl.progress(
-                    wrap(
-                        startProgress + (draggable.startY - draggable.y) * ratio
-                    )
-                ),
-            syncIndex = () => tl.updateIndex();
-        draggable = Draggable.create(proxy, {
-            trigger: items[0].parentNode,
-            type: "y",
-            onPress() {
-                startProgress = tl.progress();
-                tl.progress(0);
-                populateHeights();
-                totalHeight = getTotalHeight();
-                ratio = 1 / totalHeight;
-                dragSnap = totalHeight / items.length;
-                roundFactor = Math.pow(
-                    10,
-                    ((dragSnap + "").split(".")[1] || "").length
-                );
-                tl.progress(startProgress);
-            },
-            onDrag: align,
-            onThrowUpdate: align,
-            overshootTolerance: 1,
-            inertia: true,
-            snap: (value) => {
-                let n =
-                    Math.round(parseFloat(value) / dragSnap) *
-                    dragSnap *
-                    roundFactor;
-                return (n - (n % 1)) / roundFactor;
-            },
-            onRelease: syncIndex,
-            onThrowComplete: () => gsap.set(proxy, { y: 0 }) && syncIndex(),
-        })[0];
-
-        tl.draggable = draggable;
-    }
 
     return tl;
 };
 
-const motion = (delay, loop) => {
+const motion = (delay, loop, boxes, doRotation) => {
     let progressWrap = gsap.utils.wrap(0, 1);
 
-    loop.draggable.tween && loop.draggable.tween.kill();
-
     gsap.to(loop, {
-        progress: `+=${delay * 0.001}`,
+        progress: `+=${delay * 0.0005}`,
         overwrite: true,
         modifiers: {
             progress: progressWrap,
         },
+        onUpdate: () => {
+            if (!doRotation) return;
+            boxes.forEach((box) => {
+                const currentRotation = gsap.getProperty(box, "rotation");
+                let newRotation = currentRotation + (delay > 0 ? -0.5 : 0.5);
+
+                if (newRotation < -15 || newRotation > 15) {
+                    newRotation = getRandomDegree(0, 0);
+                }
+                gsap.to(box, { rotation: newRotation, duration: 1 });
+            });
+        },
     });
 };
 
-const run = (itemsClass, cb) => {
+const run = (itemsClass, cb, meta, doRotation) => {
     const boxes = gsap.utils.toArray(itemsClass);
-    const loop = horizontalLoop(boxes, { paused: true, draggable: true });
-
-    boxes.forEach((box, i) =>
-        box.addEventListener("click", () =>
-            loop.toIndex(i, { duration: 0.8, ease: "power1.inOut" })
-        )
+    const loop = horizontalLoop(
+        boxes,
+        { paused: true, draggable: false },
+        itemsClass,
+        meta
     );
 
-    let touchstartX = 0;
-    let touchendX = 0;
+    // Event listener for mouse wheel
+    document.addEventListener("wheel", (e) =>
+        motion(e.deltaY, loop, boxes, doRotation)
+    );
 
+    // Variables for touch support
+    let startY = 0;
+    let currentY = 0;
+
+    // Touchstart event to initialize the starting point
     document.addEventListener("touchstart", (e) => {
-        touchstartX = e.changedTouches[0].screenX;
+        if (e.touches && e.touches.length === 1) {
+            startY = e.touches[0].clientY;
+        }
     });
 
+    // Touchmove event to calculate the distance and trigger motion
+    document.addEventListener("touchmove", (e) => {
+        if (e.touches && e.touches.length === 1) {
+            currentY = e.touches[0].clientY;
+            const deltaY = startY - currentY; // Calculate the difference
+            motion(deltaY, loop); // Pass deltaY to the motion function
+            startY = currentY; // Update startY to the current position for smooth movement
+        }
+    });
+
+    // Touchend event to reset values
     document.addEventListener("touchend", () => {
-        touchendX = e.changedTouches[0].screenX;
-
-        let deltaY = touchendX - touchstartX;
-        motion(deltaY, loop);
+        startY = 0;
+        currentY = 0;
     });
 
-    document.addEventListener("wheel", (e) => motion(e.deltaY, loop));
-
+    // Callback function
     cb();
 };
 

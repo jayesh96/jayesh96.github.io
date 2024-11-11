@@ -4,7 +4,7 @@ const Navbar = ({ navbarRef, toggleNavbar }) => {
     return (
         <div
             ref={navbarRef}
-            className="z-10 bg-[var(--orange-dull)]  text-white fixed top-0 left-0 w-full p-2 "
+            className="bg-[var(--orange-dull)]  text-white fixed top-0 left-0 w-full p-2 z-50"
             style={{
                 transform: "translateY(-74vH)",
                 transition: "transform 0.5s ease",

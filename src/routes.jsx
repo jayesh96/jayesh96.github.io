@@ -1,5 +1,6 @@
 import React, { Suspense, lazy } from "react";
 import { Routes, Route, Link } from "react-router-dom";
+import Navbar from "./Navbar";
 
 const LandingPage = lazy(() => import("./containers/LandingPage/index.jsx"));
 
@@ -12,6 +13,7 @@ const NotFound = () => (
 
 const AppRoutes = () => (
     <Suspense fallback={<div>Loading...</div>}>
+        <Navbar />
         <Routes>
             <Route path="/" element={<LandingPage />} />
             <Route path="/about" element={<div>Hello </div>} />
