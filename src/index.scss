@@ -90,3 +90,27 @@
     bottom: 12rem;
     right: 16rem;
 }
+
+.preloader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: white; /* Or the background color of your choice */
+    z-index: 9999;
+    overflow: hidden;
+    flex-direction: column;
+
+    h1 {
+        font-size: 2rem;
+    }
+}
+
+.logo path {
+    fill: black; /* Adjust to your logo's stroke color */
+    stroke-width: 3; /* Adjust to your logo's stroke width */
+}

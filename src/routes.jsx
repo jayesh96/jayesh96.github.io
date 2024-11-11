@@ -1,7 +1,7 @@
 import React, { Suspense, lazy } from "react";
 import { Routes, Route, Link } from "react-router-dom";
 import Navbar from "./Navbar";
-
+import Preloader from "./components/PreLoader.jsx";
 const LandingPage = lazy(() => import("./containers/LandingPage/index.jsx"));
 
 const NotFound = () => (
@@ -12,7 +12,7 @@ const NotFound = () => (
 );
 
 const AppRoutes = () => (
-    <Suspense fallback={<div>Loading...</div>}>
+    <Suspense fallback={<Preloader />}>
         <Navbar />
         <Routes>
             <Route path="/" element={<LandingPage />} />
