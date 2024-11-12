@@ -12,7 +12,7 @@ export default defineConfig({
             targets: [
                 {
                     src: "src/assets/**/*", // Source folder with assets
-                    dest: "assets", // Destination folder in the build directory
+                    dest: "src/assets", // Destination folder in the build directory
                 },
             ],
         }),

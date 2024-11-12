@@ -2,105 +2,59 @@ import React, { useEffect, useRef, useState } from "react";
 import Header from "./Header"; // Adjust the import path as necessary
 import { gsap } from "gsap";
 import { useGSAP } from "@gsap/react";
+import classNames from "classnames";
 
 gsap.registerPlugin(useGSAP);
 
 const Navbar = () => {
-    const navbarRef = useRef(null);
-    const [isOpen, setIsOpen] = useState(false);
-    const navBarTitle = useRef();
+    const [isScrolled, setIsScrolled] = useState(false);
 
-    const { contextSafe } = useGSAP({ scope: navBarTitle });
+    useEffect(() => {
+        const handleScroll = () => {
+            const scrollPosition = window.scrollY;
+            const viewportHeight = window.innerHeight;
 
-    const onMouseEnter = contextSafe(() => {
-        gsap.to(".front", { y: "-100%", duration: 0.2, opacity: 0 });
-        gsap.to(".back", { y: "-100%", duration: 0.2, opacity: 1 });
-    });
-
-    const onMouseLeave = contextSafe(() => {
-        gsap.to(".front", { y: "0%", duration: 0.2, opacity: 1 });
-        gsap.to(".back", { y: "0%", duration: 0.2, opacity: 0 });
-    });
-
-    // useGSAP(
-    //     () => {
-    //         // gsap code here...
-    //         gsap.to(".box", { x: 360 }); // <-- automatically reverted
-    //     },
-    //     { scope: container }
-    // );
-
-    const toggleNavbar = () => {
-        const navbar = navbarRef.current;
-        setIsOpen(!isOpen);
-        if (navbar) {
-            // Check the current position of the navbar
-            if (
-                navbar.style.transform === "translate(0px, 0px)" ||
-                !navbar.style.transform
-            ) {
-                // Animate it up (out of view)
-                gsap.to(".front", { opacity: 0, duration: 0.3 });
-                gsap.to(".back", { opacity: 1, duration: 0.3 });
-
-                gsap.to(navbar, {
-                    y: "-74vH", // Move it up out of view
-                    duration: 0.3,
-                    ease: "power2.out",
-                });
-                gsap.to(".back", { opacity: 1, duration: 0.3, delay: 0.3 });
-                gsap.to(".front", { opacity: 0, duration: 0.3, delay: 0.3 });
+            // Check if the scroll position has reached or passed 100vh
+            if (scrollPosition >= viewportHeight - 10) {
+                setIsScrolled(true);
             } else {
-                // Animate it down into view
-                gsap.to(".front", { opacity: 0, duration: 0.3 });
-                gsap.to(".back", { opacity: 1, duration: 0.3 });
-
-                gsap.to(navbar, {
-                    y: "0", // Move it down into view
-                    duration: 0.3,
-                    ease: "power2.out",
-                });
-
-                gsap.to(".back", { opacity: 1, duration: 0.3, delay: 0.3 });
-                gsap.to(".front", { opacity: 0, duration: 0.3, delay: 0.3 });
+                setIsScrolled(false);
             }
-        }
-    };
+        };
 
-    useEffect(() => {});
+        window.addEventListener("scroll", handleScroll);
+
+        // Clean up the event listener on component unmount
+        return () => window.removeEventListener("scroll", handleScroll);
+    }, []);
+
     return (
-        <>
-            <Header navbarRef={navbarRef} toggleNavbar={toggleNavbar} />
-            <section className="header-btn flex z-50">
-                <div
-                    className="flex flex-col overflow-hidden "
-                    ref={navBarTitle}
-                    onMouseLeave={onMouseLeave}
-                    onMouseEnter={onMouseEnter}
-                >
-                    <button
-                        onClick={toggleNavbar}
-                        className="font-custom front"
-                    >
-                        {!isOpen ? "CONTACT ME" : "BACK"}
-                    </button>
-                    <button
-                        onClick={toggleNavbar}
-                        className="font-custom back opacity-0"
-                    >
-                        {!isOpen ? "CONTACT ME" : "BACK"}
-                    </button>
-                </div>
-
-                <button onClick={toggleNavbar} className="font-custom">
-                    <img
-                        src={"src/assets/letskiptheQ-nobg.png"}
-                        width={"100"}
-                        height={"100"}
-                    />
-                </button>
-            </section>
-        </>
+        <nav
+            className={`flex justify-between items-center p-4 z-50 top-0 ${
+                isScrolled ? "w-full xl:w-1/2 md:sticky " : "w-full absolute "
+            }`}
+        >
+            <div className="flex items-center space-x-2">
+                <span className="text-lg font-semibold">Jayesh Bidani</span>
+            </div>
+            <div className="hidden md:flex space-x-8 text-gray-600">
+                <a href="#" className="hover:text-black">
+                    Story
+                </a>
+                <a href="#" className="hover:text-black">
+                    Works
+                </a>
+                <a href="#" className="hover:text-black">
+                    Skills
+                </a>
+                <a href="#" className="hover:text-black">
+                    Explorations
+                </a>
+            </div>
+            <button className="bg-black text-white px-4 py-2 rounded-full text-sm hover:bg-gray-800">
+                Say "Hello!"
+            </button>
+        </nav>
     );
 };
 
