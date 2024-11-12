@@ -77,6 +77,27 @@ const WORK = [
         description: `Cayster’s technology connects devices and software for dental technology which enhances investments and improved patient care.`,
         image: "letskiptheQ",
     },
+
+    {
+        name: "Rayo Web Accessibility",
+        location: "USA, Remote",
+        description: `Cayster’s technology connects devices and software for dental technology which enhances investments and improved patient care.`,
+        image: "caysterapp",
+    },
+
+    {
+        name: "Rayo Web Accessibility",
+        location: "USA, Remote",
+        description: `Cayster’s technology connects devices and software for dental technology which enhances investments and improved patient care.`,
+        image: "digitaltwin",
+    },
+
+    {
+        name: "Rayo Web Accessibility",
+        location: "USA, Remote",
+        description: `Cayster’s technology connects devices and software for dental technology which enhances investments and improved patient care.`,
+        image: "hatchworkspace",
+    },
 ];
 
 const StackScroller = () => {

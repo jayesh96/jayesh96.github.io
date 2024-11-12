@@ -35,10 +35,12 @@ const Navbar = () => {
             }`}
         >
             <div className="flex items-center space-x-2">
-                <span className="text-lg font-semibold">Jayesh Bidani</span>
+                <div className="text-sm available-for-work">
+                    <div className="w-3 green-dot"></div> Open To Work
+                </div>
             </div>
             <div className="hidden md:flex space-x-8 text-gray-600">
-                <a href="#" className="hover:text-black">
+                <a href="#about" className="hover:text-black">
                     Story
                 </a>
                 <a href="#" className="hover:text-black">

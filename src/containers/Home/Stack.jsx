@@ -1,4 +1,5 @@
 import React from "react";
+import ClapButton from "./Clap";
 
 const CardLayout = () => {
     return (
@@ -10,7 +11,7 @@ const CardLayout = () => {
                 You'll catch me doing a combo of these
             </h1>
 
-            <div className="flex space-x-6 flex-wrap">
+            <div className="flex space-x-6 flex-wrap items-center justify-center">
                 <Card
                     title="Language I have worked in"
                     items={[

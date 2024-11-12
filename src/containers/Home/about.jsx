@@ -25,23 +25,33 @@ const AboutSection = () => {
                 {/* Text Content */}
                 <div className="max-w-lg text-left text-xl lg:text-2xl mt-10">
                     <p className="text-gray-600">
-                        Born in Delhi, India. working remotely. I've spent the
-                        past 6+ years collaborating with funded companies on
-                        full stack development and mentor.
+                        I was born in Delhi, India and currently work remotely.
+                        For the past 6+ years, I have been collaborating with
+                        funded companies on full stack development and
+                        mentoring.
                     </p>
                     <p className="mt-4 text-gray-600">
-                        I join forces with founders to create compelling stories
-                        and digital experiences. Ones that make their products
-                        shine, resonate with users, and attract more investors.
+                        I work with with founders to create compelling stories
+                        and digital experiences. My goal is to make their
+                        products shine, resonate with users, and attract more
+                        investors.
                     </p>
                 </div>
             </div>
 
             {/* Logos */}
             <div className="flex flex-col items-center mt-48  ">
-                <p className="text-gray-500 text-xl mb-16 lg:mb-32 ">
-                    So far I have worked with multiple funded startups
+                <p className="text-gray-500 italic  section-side-message-right caveat-new text-2xl mb-4">
+                    amazing founders and employees
                 </p>
+                <h3 className="text-gray-500 text-xl md:text-3xl mb-16 lg:mb-32 ">
+                    So far I have worked with{" "}
+                    <span style={{ textDecoration: "line-through" }}>
+                        various funded startups{" "}
+                    </span>{" "}
+                    ^
+                </h3>
+
                 <div className="flex gap-8 flex-wrap company-logos mt-16 justify-center items-center">
                     <img
                         src="https://images.crunchbase.com/image/upload/c_pad,h_170,w_170,f_auto,b_white,q_auto:eco,dpr_1/qhojo4dzbzgbu362o7kn"
