@@ -110,7 +110,7 @@ const StackScroller = () => {
                             pin: true,
                             pinSpacing: false,
                             scrub: true, // Allows smooth rotation on scroll
-                            markers: true,
+                            markers: false,
                             id: `card-rotation-${index}`,
                             invalidateOnRefresh: true,
                         },
