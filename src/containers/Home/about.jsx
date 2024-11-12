@@ -1,4 +1,5 @@
 import React from "react";
+import Companies from "../../components/Companies";
 
 const AboutSection = () => {
     return (
@@ -52,74 +53,9 @@ const AboutSection = () => {
                     ^
                 </h3>
 
-                <div className="flex gap-8 flex-wrap company-logos mt-16 justify-center items-center">
-                    <img
-                        src="https://images.crunchbase.com/image/upload/c_pad,h_170,w_170,f_auto,b_white,q_auto:eco,dpr_1/qhojo4dzbzgbu362o7kn"
-                        alt="Accel"
-                    />
+                <Companies />
 
-                    <img
-                        src="https://images.crunchbase.com/image/upload/c_pad,h_170,w_170,f_auto,b_white,q_auto:eco,dpr_1/wqbrxlktqg1sag58yrts"
-                        alt="Ventech"
-                    />
-
-                    <img
-                        src="https://images.crunchbase.com/image/upload/c_pad,h_170,w_170,f_auto,b_white,q_auto:eco,dpr_1/qaxczo3oha5mz6nnjwfo"
-                        alt="Plug and Play"
-                    />
-                    <img
-                        src="https://media.glassdoor.com/sql/4400757/kontext-india-squarelogo-1627049424043.png"
-                        alt="Y Combinator"
-                    />
-
-                    <img
-                        src="https://images.crunchbase.com/image/upload/c_pad,h_170,w_170,f_auto,b_white,q_auto:eco,dpr_1/cheeov1jruvldqq7uufs"
-                        alt="Ventech"
-                    />
-                    <img
-                        src="https://images.crunchbase.com/image/upload/c_pad,h_170,w_170,f_auto,b_white,q_auto:eco,dpr_1/e8kisuoetemicyoeznxz"
-                        alt="Ventech"
-                    />
-                    <img
-                        src="https://images.crunchbase.com/image/upload/c_pad,h_170,w_170,f_auto,b_white,q_auto:eco,dpr_1/zfvkuf2k98lacoqpqdiw"
-                        alt="Ventech"
-                    />
-
-                    <img
-                        src="https://images.crunchbase.com/image/upload/c_pad,h_170,w_170,f_auto,b_white,q_auto:eco,dpr_1/luqdr3bawm8ifyxuuoq0"
-                        alt="Ventech"
-                    />
-                    <img
-                        src="https://media.licdn.com/dms/image/v2/C510BAQHFm1-64M66tg/company-logo_200_200/company-logo_200_200/0/1630622942788/hypothizerai_logo?e=1739404800&v=beta&t=f--9ky_6QIkStlYrdmM8VnkpXNqZh4ljyPyFQ2uI_Zc"
-                        alt="Ventech"
-                    />
-                    <img
-                        src="https://images.crunchbase.com/image/upload/c_pad,h_170,w_170,f_auto,b_white,q_auto:eco,dpr_1/v1397752992/74769b9ae07299a83ba081cd99930ab9.png"
-                        alt="Ventech"
-                    />
-                    <img
-                        src="https://kmiteservices.com/images/logo1.png"
-                        alt="Ventech"
-                    />
-                    <img
-                        src="https://images.crunchbase.com/image/upload/c_pad,h_170,w_170,f_auto,b_white,q_auto:eco,dpr_1/v1446411369/gmaliteiulna4pefluib.jpg"
-                        alt="Ventech"
-                    />
-                    <img
-                        src="https://bookface-images.s3.amazonaws.com/logos/58b19639becbd4d495b7ca39c2b95bb42d24d8ed.png?1588366041"
-                        alt="Ventech"
-                    />
-                    <img
-                        src="https://media.licdn.com/dms/image/v2/C4E0BAQGgV2CDFA_SAA/company-logo_200_200/company-logo_200_200/0/1631303859833?e=1739404800&v=beta&t=oKT8YVp5NgRISqchUIf86jkJSCIMos2mNpprH907YXM"
-                        alt="Ventech"
-                    />
-
-                    <p className="text-gray-500 italic mb-2  caveat-new text-2xl">
-                        ... and hoping to work with many more!
-                    </p>
-
-                    <span className="italic"></span>
-                </div>
+                <span className="italic"></span>
             </div>
         </section>
     );

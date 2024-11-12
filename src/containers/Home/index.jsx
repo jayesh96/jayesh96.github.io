@@ -4,6 +4,7 @@ import WorkSection from "./work";
 import CaseStudySection from "./CaseStudySection";
 import CallToActionCard from "./CallToAction";
 import Stack from "./Stack";
+import Pills from "../../components/Pills";
 
 const HeroSection = () => {
     return (
@@ -29,24 +30,7 @@ const HeroSection = () => {
                 </div>
 
                 {/* Tags */}
-                <div className="flex space-x-0 sm:space-x-4 mt-8 flex-wrap flex-col sm:flex-row items-start   ">
-                    <span className="bg-blue-200 text-blue-800 px-3 py-1 rounded-lg md:text-2xl font-semibold  sm:w-fit mb-8 md:mt-0">
-                        🌐 Full Stack Development
-                    </span>
-                    <span className="bg-green-200 text-green-800 px-3 py-1 rounded-lg md:text-2xl font-semibold sm:w-fit mb-8 md:mt-0">
-                        ✨ Hybrid Mobile Apps
-                    </span>
-                    <span className="bg-yellow-200 text-yellow-800 px-3 py-1 rounded-lg md:text-2xl font-semibold sm:w-fit mb-8 md:mt-0">
-                        💡 Creative Designs
-                    </span>
-                    <span className="bg-orange-200 text-orange-800 px-6 py-1 rounded-lg md:text-2xl font-semibold sm:w-fit mb-8 md:mt-0">
-                        🎨 AR/VR
-                    </span>
-
-                    <span className="bg-purple-200 text-purple-800 px-6 py-1 rounded-lg md:text-2xl font-semibold sm:w-fit mb-8 md:mt-0">
-                        🎮 3D Game Development
-                    </span>
-                </div>
+                <Pills />
             </section>
             <AboutSection />
 
