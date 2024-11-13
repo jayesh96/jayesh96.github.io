@@ -9,22 +9,22 @@ gsap.registerPlugin(ScrollTrigger);
 const WORK = [
     {
         name: "HatchXR",
-        location: "Gurgaon, India",
-        description: ` Build awesome AR/VR experiences, all from your web
-                        browser.`,
-        image: "hatchxr",
+        // location: "Gurgaon, India",
+        // description: ` Build awesome AR/VR experiences, all from your web
+        //                 browser.`,
+        image: "https://iili.io/2uBSDSp.md.png",
     },
     {
         name: "Hatch For Kids",
-        location: "Gurgaon, India",
-        description: `AR, VR, and 3D Coding for the Classroom. The most engaging way to teach Coding, Logic, and Math to kids.`,
-        image: "hatchkids",
+        // location: "Gurgaon, India",
+        // description: `AR, VR, and 3D Coding for the Classroom. The most engaging way to teach Coding, Logic, and Math to kids.`,
+        image: "https://iili.io/2uBSsVa.md.png",
     },
     {
         name: "Cayster DSO",
-        location: "USA, Remote",
-        description: `Cayster’s technology connects devices and software for dental technology which enhances investments and improved patient care.`,
-        image: "cayster",
+        // location: "USA, Remote",
+        // description: `Cayster’s technology connects devices and software for dental technology which enhances investments and improved patient care.`,
+        image: "https://iili.io/2uBSrAP.md.png",
     },
     // {
     //     name: "Cayster Digital Twin",
@@ -34,9 +34,9 @@ const WORK = [
     // },
     {
         name: "Bot104",
-        location: "USA, Remote",
-        description: `Cayster’s technology connects devices and software for dental technology which enhances investments and improved patient care.`,
-        image: "bot104",
+        // location: "USA, Remote",
+        // description: `Cayster’s technology connects devices and software for dental technology which enhances investments and improved patient care.`,
+        image: "https://iili.io/2uBSSSV.md.png",
     },
     // {
     //     name: "Mindful Chrome Extension",
@@ -52,58 +52,56 @@ const WORK = [
     // },
     {
         name: "Rayo Web Accessibility",
-        location: "USA, Remote",
-        description: `Cayster’s technology connects devices and software for dental technology which enhances investments and improved patient care.`,
-        image: "rayo",
+        // location: "USA, Remote",
+        // description: `Cayster’s technology connects devices and software for dental technology which enhances investments and improved patient care.`,
+        image: "https://iili.io/2uBU9DX.md.png",
     },
 
     {
-        name: "Rayo Web Accessibility",
+        name: "Mindful",
         location: "USA, Remote",
         description: `Cayster’s technology connects devices and software for dental technology which enhances investments and improved patient care.`,
-        image: "mindful",
+        image: "https://iili.io/2uBUJxn.md.png",
     },
 
     {
-        name: "Rayo Web Accessibility",
+        name: "KMIT EServices",
         location: "USA, Remote",
         description: `Cayster’s technology connects devices and software for dental technology which enhances investments and improved patient care.`,
-        image: "kmit",
+        image: "https://iili.io/2uBSmHN.md.png",
     },
 
     {
-        name: "Rayo Web Accessibility",
+        name: "LetskiptheQ - Travel Journal",
         location: "USA, Remote",
         description: `Cayster’s technology connects devices and software for dental technology which enhances investments and improved patient care.`,
-        image: "letskiptheQ",
+        image: "https://iili.io/2uBSpRI.md.png",
     },
 
     {
-        name: "Rayo Web Accessibility",
+        name: "Cayster App",
         location: "USA, Remote",
         description: `Cayster’s technology connects devices and software for dental technology which enhances investments and improved patient care.`,
-        image: "caysterapp",
+        image: "https://iili.io/2uBStlR.md.png",
     },
 
     {
-        name: "Rayo Web Accessibility",
+        name: "Omniverse Digital Twin",
         location: "USA, Remote",
         description: `Cayster’s technology connects devices and software for dental technology which enhances investments and improved patient care.`,
-        image: "digitaltwin",
+        image: "https://iili.io/2uBSZKv.md.png",
     },
 
     {
-        name: "Rayo Web Accessibility",
+        name: "Hatch Workspace",
         location: "USA, Remote",
         description: `Cayster’s technology connects devices and software for dental technology which enhances investments and improved patient care.`,
-        image: "hatchworkspace",
+        image: "https://iili.io/2uBSLiJ.md.png",
     },
 ];
 
 const StackScroller = () => {
     const containerRef = useRef(null);
-    const cardsRef = useRef([]);
-    const [allowScrolling, setAllowScrolling] = useState(true);
 
     const handleScroll = () => {
         const position = window.pageYOffset;
@@ -154,54 +152,26 @@ const StackScroller = () => {
             <div className={`cards`}>
                 {WORK.map((project) => {
                     return (
-                        // <div className="flex flex-col md:flex-row items-center justify-between rounded-xl p-8  to-white shadow-lg max-w-6xl  w-full mb-16 card">
-                        //     {/* Left Side - Text Content */}
-                        //     <div className="flex flex-col max-w-md">
-                        //         <h2 className="text-2xl font-semibold mb-2">
-                        //             {project.name}
-                        //         </h2>
-                        //         <p className="text-gray-600 flex items-center mb-4">
-                        //             <span
-                        //                 role="img"
-                        //                 aria-label="flag"
-                        //                 className="mr-2"
-                        //             >
-                        //                 🇮🇳
-                        //             </span>
-                        //             {project.location}
-                        //         </p>
-                        //         <p className="text-gray-700 mb-6">
-                        //             {project.description}
-                        //         </p>
-                        //         <button className="flex items-center text-sm font-semibold text-gray-700  px-4 py-2 rounded-full">
-                        //             Read More
-                        //             <span className="ml-2 text-xl">→</span>
-                        //         </button>
-                        //     </div>
-
-                        //     {/* Right Side - Images */}
-                        //     <div className="flex gap-4 mt-8 md:mt-0">
-                        //         <img
-                        //             src="https://via.placeholder.com/80x160" // Replace with actual image URL
-                        //             alt="Screenshot 1"
-                        //             className="w-20 h-40 rounded-lg shadow-lg"
-                        //         />
-                        //         <img
-                        //             src="https://via.placeholder.com/160x300" // Replace with actual image URL
-                        //             alt="Screenshot 2"
-                        //             className="w-40 h-72 rounded-lg shadow-lg"
-                        //         />
-                        //         <img
-                        //             src="https://via.placeholder.com/80x160" // Replace with actual image URL
-                        //             alt="Screenshot 3"
-                        //             className="w-20 h-40 rounded-lg shadow-lg"
-                        //         />
-                        //     </div>
-                        // </div>
                         <div className="card">
-                            <img
-                                src={`src/assets/projects/${project.image}.png`}
-                            />
+                            <div className="absolute bg-black bg-opacity-0 hover:bg-opacity-60 z-10 h-full w-full rounded-2xl hover:cursor-pointer">
+                                <p className="top-1/2 left-1/2 absolute opacity-0   url-icon text-sm">
+                                    {project.name}
+                                </p>
+                                {/* <svg
+                                    aria-hidden="true"
+                                    height="18"
+                                    version="1.0"
+                                    viewBox="0 0 16 16"
+                                    width="18"
+                                >
+                                    <path
+                                        fill-rule="evenodd"
+                                        d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"
+                                    ></path>
+                                </svg> */}
+                            </div>
+
+                            <img src={`${project.image}`} />
                         </div>
                     );
                 })}

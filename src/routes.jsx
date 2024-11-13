@@ -13,6 +13,19 @@ const NotFound = () => (
     </div>
 );
 
+const ScrollToSection = () => {
+    const location = useLocation();
+
+    useEffect(() => {
+        const section = document.getElementById(location.hash.slice(1));
+        if (section) {
+            section.scrollIntoView({ behavior: "smooth" });
+        }
+    }, [location]);
+
+    return null;
+};
+
 const AppRoutes = () => (
     <Suspense fallback={<Preloader />}>
         <Navbar />

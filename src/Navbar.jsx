@@ -40,17 +40,14 @@ const Navbar = () => {
                 </div>
             </div>
             <div className="hidden md:flex space-x-8 text-gray-600">
-                <a href="#about" className="hover:text-black">
+                <a href="#" className="hover:text-gray-800 hover:font-bold">
                     Story
                 </a>
-                <a href="#" className="hover:text-black">
+                <a href="#" className="hover:text-gray-800 hover:font-bold">
                     Works
                 </a>
-                <a href="#" className="hover:text-black">
+                <a href="#" className="hover:text-gray-800 hover:font-bold">
                     Skills
-                </a>
-                <a href="#" className="hover:text-black">
-                    Explorations
                 </a>
             </div>
             <button className="bg-black text-white px-4 py-2 rounded-full text-sm hover:bg-gray-800">

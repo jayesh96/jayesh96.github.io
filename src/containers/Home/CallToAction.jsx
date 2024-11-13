@@ -43,7 +43,14 @@ const CallToActionCard = () => {
                     Let's make it happen!✨
                 </p>
 
-                <button className="bg-black text-white py-2 px-6 rounded-full shadow-lg hover:bg-gray-800 transition duration-200">
+                <button
+                    onClick={() => {
+                        window.open(
+                            "https://docs.google.com/document/d/19NvDSOwKRctQOiB4mSthR0SzKerzw0HAG8g5SrBzpLQ/edit?usp=sharing"
+                        );
+                    }}
+                    className="bg-black text-white py-2 px-6 rounded-full shadow-lg hover:bg-gray-800 transition duration-200"
+                >
                     Download Resume (PDF)
                 </button>
 
@@ -61,24 +68,6 @@ const CallToActionCard = () => {
                         +91-7678383708
                     </a>
                 </div> */}
-
-                <div className="flex mt-6 space-x-4 w-full">
-                    {SOCIAL.map((social, index) => {
-                        return (
-                            <a
-                                href={social.url}
-                                className="p-2 rounded-full shadow-sm  opacity-80 transition duration-200 w-12 hover:opacity-1 hover:scale-110 social-icons"
-                            >
-                                {/* Replace with icon SVG */}
-                                <span className="sr-only">{social.name}</span>
-                                <img
-                                    src={`src/assets/projects/icons/${social.src}.svg`}
-                                    alt={social.name}
-                                />
-                            </a>
-                        );
-                    })}
-                </div>
             </div>
         </section>
     );

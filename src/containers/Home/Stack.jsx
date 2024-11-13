@@ -3,7 +3,10 @@ import ClapButton from "./Clap";
 
 const CardLayout = () => {
     return (
-        <section className="flex flex-col items-center justify-center min-h-screen bg-white text-center mb-36 w-full">
+        <section
+            id="about"
+            className="flex flex-col items-center justify-center min-h-screen bg-white text-center mb-36 w-full"
+        >
             <p className="text-gray-500 italic mb-2 section-side-message caveat-new text-2xl">
                 when I'm not out with my loved ones...
             </p>

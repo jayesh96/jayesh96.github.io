@@ -581,6 +581,12 @@ textarea,
     font-style: normal;
 }
 
+.londrina-outline-regular {
+    font-family: "Londrina Outline", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
 #root {
     display: flex;
     flex-direction: column;
@@ -741,14 +747,14 @@ section {
 
 .section-side-message {
     @media only screen and (min-width: 768px) {
-        transform: translate(-200%, 10%) rotate(-5deg);
+        transform: translate(-10%, 10%) rotate(-5deg);
         max-width: 200px;
     }
 }
 
 .section-side-message-right {
     @media only screen and (min-width: 768px) {
-        transform: translate(200%, 30%) rotate(-5deg);
+        transform: translate(10%, 30%) rotate(-5deg);
         max-width: 200px;
     }
 }
@@ -782,4 +788,19 @@ code {
 
 .social-icons:hover {
     border: 2px solid white;
+}
+
+.card:hover > div > p {
+    transform: scale(1.5);
+    transform: translate(-50%, -50%);
+
+    opacity: 1;
+    color: white;
+}
+
+.footer-credits {
+    padding: 30px;
+    width: 100%;
+    border: 2px solid black;
+    background: #d1ffe0;
 }

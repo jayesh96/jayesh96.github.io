@@ -5,21 +5,22 @@ import CaseStudySection from "./CaseStudySection";
 import CallToActionCard from "./CallToAction";
 import Stack from "./Stack";
 import Pills from "../../components/Pills";
-
+import Extra from "./Extra";
+import Footer from "./Footer";
 const HeroSection = () => {
     return (
         <>
             <section
                 id="about"
-                className=" h-vh w-full flex flex-col  justify-center bg-gray-50 p-8  mt:16 mb-16 lg:p-32 hero-section  "
+                className=" min-h-vh w-full flex flex-col  justify-center bg-gray-50 p-8  mt:16 mb-16 lg:p-32 hero-section  "
             >
                 {/* Hero Content */}
                 <div className="">
                     <p className="text-xl md:text-3xl text-gray-600 flex items-start  space-x-2">
                         <span>
                             👋 I'm <b>Jayesh Bidani</b>,
-                            <br />a Software Engineer, Educator, and Traveler
-                            from 🇮🇳.
+                            <br />a Senior Software Engineer and Web Development
+                            Expert.
                         </span>
                     </p>
                     <h3 className="mt-4 text-2xl md:text-4xl  lg:text-4xl font-bold text-gray-900">
@@ -38,6 +39,12 @@ const HeroSection = () => {
             <CaseStudySection />
             <Stack />
             <CallToActionCard />
+            <Extra />
+            <Footer />
+            <div className="flex width-full flex-col md:flex-row justify-between footer-credits">
+                <div>Copyleft@[What-year-is-this]</div>
+                <div>Crafted with ❤️ by Jayesh Bidani</div>
+            </div>
         </>
     );
 };
