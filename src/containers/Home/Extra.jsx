@@ -5,13 +5,13 @@ import HoverImagePopup from "../../components/HoverImagePopup";
 
 const ORGS = [
     {
-        src: "https://media.licdn.com/dms/image/v2/D560BAQEit9Hxt3wa5Q/company-logo_200_200/company-logo_200_200/0/1701203787328/treehacks_logo?e=1739404800&v=beta&t=VhaSzJyLe1s7DrHrY695CzvDYbnypxCO-I-hD3RXfdA",
+        src: "https://media.licdn.com/dms/image/v2/D4E0BAQHgGacdFVlpMA/company-logo_100_100/company-logo_100_100/0/1689890082368/init_fiu_logo?e=1748476800&v=beta&t=RNAPhYF65G1Y2YzOyMTHHOAGVd40QRbQ-DHxFwU8dgk",
     },
     {
-        src: "https://media.licdn.com/dms/image/v2/D4E0BAQHgGacdFVlpMA/company-logo_200_200/company-logo_200_200/0/1689890082368/init_fiu_logo?e=1739404800&v=beta&t=KjddEppE_Ov5uL0jrdG3kgO41yxA6PAvM4O_i3Z_HL4",
+        src: "https://media.licdn.com/dms/image/v2/D560BAQEit9Hxt3wa5Q/company-logo_100_100/company-logo_100_100/0/1701203787328/treehacks_logo?e=1748476800&v=beta&t=cdRyPVHTbP7fTXq2ufgb_HHlXCIP0K9P0k09kSUb0q8",
     },
     {
-        src: "https://media.licdn.com/dms/image/v2/C560BAQExw_VcTXsZ5A/company-logo_200_200/company-logo_200_200/0/1630638699708/garudahacks_logo?e=1739404800&v=beta&t=l_VS0rfgO7S8tM6Sti6C_jglqa6mD7nZNrCxXq6LYYE",
+        src: "https://media.licdn.com/dms/image/v2/C560BAQExw_VcTXsZ5A/company-logo_100_100/company-logo_100_100/0/1630638699708/garudahacks_logo?e=1748476800&v=beta&t=RcbwC3cR4rVjjyXVf8ModOw_CMnb4dsQFFVLEo69Ndc",
     },
 ];
 
