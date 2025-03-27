@@ -8,7 +8,7 @@ const WorkSection = () => {
                     Your product can look something like this too
                 </p>
                 <p className="text-gray-500 italic mb-2 section-side-message-right caveat-new text-2xl">
-                    ...these all are my work =)
+                    Check out my work!
                 </p>
             </div>
         </section>

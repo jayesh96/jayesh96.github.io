@@ -15,19 +15,18 @@ const ORGS = [
     },
 ];
 
-const Extra = () => {
+const Extra = ({ hobbiesRef }) => {
     return (
         <section
+            ref={hobbiesRef}
             id="about"
             className="flex flex-col items-center justify-center min-h-screen bg-white text-center  w-full mt-32"
         >
             <h3 className="text-xl md:text-3xl lg:text-5xl font-bold max-w-96 mb-8">
-                What else I do?
+                Want to know more about me?
             </h3>
             <p className="text-gray-500 italic mb-2  caveat-new text-2xl">
-                Might as well look for some <br />
-                bonus content <br />
-                💡 Tip: Dont forgot to hover!
+                💡 Scroll down, and don’t forget to hover!
             </p>
 
             <div className="flex flex-col londrina-outline-regular mt-8 text-3xl">
@@ -56,10 +55,16 @@ const Extra = () => {
                         </p>
                     </li>
                     <li className="my-8 hover:text-orange-900  hover:font-extrabold">
-                        I teach students to Code
+                        I teach coding
                         <p className="text-orange-500 italic mb-2  caveat-new text-2xl">
-                            ( Run a discord group - HelpMeBuddy where I teach
-                            (150 students) )
+                            ( Join 150+ students on my discord group-{" "}
+                            <a
+                                style={{ borderBottom: "3px inset orange " }}
+                                href="https://discord.gg/HZEUxxKq"
+                            >
+                                HelpMeBuddy
+                            </a>{" "}
+                            NOW!!! )
                         </p>
                     </li>
                     <li className="my-8 hover:text-blue-900 hover:font-extrabold">
@@ -68,7 +73,7 @@ const Extra = () => {
                             imageUrl="https://iili.io/2ucWGPS.png"
                         />
                         <p className="text-blue-500 italic mb-2  caveat-new text-2xl">
-                            ( 16 countries so far and countless Indian states)
+                            ( 16 countries and counting!)
                         </p>
                     </li>
 
@@ -84,21 +89,17 @@ const Extra = () => {
 
                     <li className="my-8 hover:text-purple-900 hover:font-extrabold">
                         <HoverImagePopup
-                            text=" I participate in hackathons"
+                            text=" Hackathon Enthusiast "
                             imageUrl="https://iili.io/2uc6Qvj.jpg"
                         />
                         <p className="text-purple-500 italic mb-2  caveat-new text-2xl">
-                            ( Sometimes I win big! )
+                            ( I compete, mentor, and sometimes I win big! )
                         </p>
                     </li>
                 </ol>
             </div>
 
-            <p className="text-blue-500 italic mb-2  caveat-new text-2xl mt-32">
-                P.S: I have also mentored at international hackathons also
-            </p>
-
-            <Companies data={ORGS} />
+            <Companies data={ORGS} text={"& Ready for more!"} />
         </section>
     );
 };

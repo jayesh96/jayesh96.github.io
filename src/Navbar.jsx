@@ -6,7 +6,7 @@ import classNames from "classnames";
 
 gsap.registerPlugin(useGSAP);
 
-const Navbar = () => {
+const Navbar = ({ scrollToSection, storyRef, projectsRef, hobbiesRef }) => {
     const [isScrolled, setIsScrolled] = useState(false);
 
     useEffect(() => {
@@ -40,17 +40,31 @@ const Navbar = () => {
                 </div>
             </div>
             <div className="hidden md:flex space-x-8 text-gray-600">
-                <a href="#" className="hover:text-gray-800 hover:font-bold">
+                <button
+                    onClick={() => scrollToSection(storyRef)}
+                    className="hover:text-gray-800 hover:font-bold navicon"
+                >
                     Story
-                </a>
-                <a href="#" className="hover:text-gray-800 hover:font-bold">
+                </button>
+                <button
+                    onClick={() => scrollToSection(projectsRef)}
+                    className="hover:text-gray-800 hover:font-bold navicon"
+                >
                     Works
-                </a>
-                <a href="#" className="hover:text-gray-800 hover:font-bold">
+                </button>
+                <button
+                    onClick={() => scrollToSection(hobbiesRef)}
+                    className="hover:text-gray-800 hover:font-bold navicon"
+                >
                     Skills
-                </a>
+                </button>
             </div>
-            <button className="bg-black text-white px-4 py-2 rounded-full text-sm hover:bg-gray-800">
+            <button
+                className="bg-black text-white px-4 py-2 rounded-full text-sm hover:bg-gray-800"
+                onClick={() => {
+                    window.open("https://www.linkedin.com/in/jayesh-bidani/");
+                }}
+            >
                 Say "Hello!"
             </button>
         </nav>

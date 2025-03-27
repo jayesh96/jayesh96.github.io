@@ -100,7 +100,7 @@ const WORK = [
     },
 ];
 
-const StackScroller = () => {
+const StackScroller = ({ projectsRef }) => {
     const containerRef = useRef(null);
 
     const handleScroll = () => {
@@ -149,7 +149,7 @@ const StackScroller = () => {
 
     return (
         <section className="min-h-screen pin-panel mb-48" ref={containerRef}>
-            <div className={`cards`}>
+            <div className={`cards`} ref={projectsRef}>
                 {WORK.map((project) => {
                     return (
                         <div className="card">

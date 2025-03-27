@@ -8,10 +8,10 @@ const CardLayout = () => {
             className="flex flex-col items-center justify-center min-h-screen bg-white text-center mb-36 w-full"
         >
             <p className="text-gray-500 italic mb-2 section-side-message caveat-new text-2xl">
-                when I'm not out with my loved ones...
+                If I'm not with my favorite people,
             </p>
             <h1 className="text-xl md:text-3xl lg:text-5xl font-bold mb-32 mt-4 max-w-96">
-                You'll catch me doing a combo of these
+                I'm likely exploring a combo of these
             </h1>
 
             <div className="flex space-x-6 flex-wrap items-center justify-center">

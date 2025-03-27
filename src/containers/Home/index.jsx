@@ -7,7 +7,7 @@ import Stack from "./Stack";
 import Pills from "../../components/Pills";
 import Extra from "./Extra";
 import Footer from "./Footer";
-const HeroSection = () => {
+const HeroSection = ({ storyRef, projectsRef, hobbiesRef }) => {
     return (
         <>
             <section
@@ -18,12 +18,11 @@ const HeroSection = () => {
                 <div className="">
                     <p className="text-xl md:text-3xl text-gray-600 flex items-start  space-x-2">
                         <span>
-                            👋 I'm <b>Jayesh Bidani</b>,
-                            <br />a Senior Software Engineer and Web Development
-                            Expert.
+                            <span className="wave">👋</span> I'm{" "}
+                            <b>Jayesh Bidani</b>, a Software Engineer
                         </span>
                     </p>
-                    <h3 className="mt-4 text-2xl md:text-4xl  lg:text-4xl font-bold text-gray-900">
+                    <h3 className="mt-16 text-2xl md:text-4xl  lg:text-4xl font-bold text-gray-900">
                         I focus on building products using{" "}
                         <code> &lt;Code/&gt; </code> and creating unique,
                         empathic product experiences.
@@ -33,13 +32,13 @@ const HeroSection = () => {
                 {/* Tags */}
                 <Pills />
             </section>
-            <AboutSection />
+            <AboutSection storyRef={storyRef} />
 
             <WorkSection />
-            <CaseStudySection />
+            <CaseStudySection projectsRef={projectsRef} />
             <Stack />
             <CallToActionCard />
-            <Extra />
+            <Extra hobbiesRef={hobbiesRef} />
             <Footer />
             <div className="flex width-full flex-col md:flex-row justify-between footer-credits">
                 <div>Copyleft@[What-year-is-this]</div>

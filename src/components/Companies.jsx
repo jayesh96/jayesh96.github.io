@@ -4,7 +4,7 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 gsap.registerPlugin(ScrollTrigger);
 
-const AnimatedPills = ({ data }) => {
+const AnimatedPills = ({ data, text }) => {
     const containerRef = useRef(null);
     const pillsRef = useRef([]);
 
@@ -44,7 +44,7 @@ const AnimatedPills = ({ data }) => {
             ))}
 
             <p className="text-gray-500 italic mb-2  caveat-new text-2xl">
-                ... and hoping to work with many more!
+                {text}
             </p>
         </div>
     );

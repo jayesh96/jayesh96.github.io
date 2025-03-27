@@ -46,9 +46,12 @@ const COMPANIES = [
     },
 ];
 
-const AboutSection = () => {
+const AboutSection = ({ storyRef }) => {
     return (
-        <section className=" flex flex-col items-center justify-center py-16 px-8 bg-white w-full  min-h-screen">
+        <section
+            ref={storyRef}
+            className=" flex flex-col items-center justify-center py-16 px-8 bg-white w-full  min-h-screen"
+        >
             <div className="flex flex-col lg:flex-row items-center lg:items-start gap-8 w-full justify-between">
                 {/* Polaroid Images */}
                 <div className="flex gap-4">
@@ -77,10 +80,10 @@ const AboutSection = () => {
                         mentoring.
                     </p>
                     <p className="mt-4 text-gray-600">
-                        I work with with founders to create compelling stories
-                        and digital experiences. My goal is to make their
-                        products shine, resonate with users, and attract more
-                        investors.
+                        I create compelling stories and digital experiences for
+                        inspired and innovative founders. My goal is to make
+                        their products shine, resonate with users, and attract
+                        more investors.
                     </p>
                 </div>
             </div>
@@ -98,7 +101,10 @@ const AboutSection = () => {
                     ^
                 </h3>
 
-                <Companies data={COMPANIES} />
+                <Companies
+                    data={COMPANIES}
+                    text={"... and hoping to work with many more!"}
+                />
 
                 <span className="italic"></span>
             </div>

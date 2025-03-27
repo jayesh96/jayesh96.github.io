@@ -46,7 +46,7 @@ const CallToActionCard = () => {
                 <button
                     onClick={() => {
                         window.open(
-                            "https://docs.google.com/document/d/19NvDSOwKRctQOiB4mSthR0SzKerzw0HAG8g5SrBzpLQ/edit?usp=sharing"
+                            "https://drive.google.com/file/d/1UOAviPDJESXE-T2yd6gSU0wLbhPUIBj0/view?usp=sharing"
                         );
                     }}
                     className="bg-black text-white py-2 px-6 rounded-full shadow-lg hover:bg-gray-800 transition duration-200"

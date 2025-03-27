@@ -1,40 +1,45 @@
-import React, { Suspense, lazy } from "react";
+import React, { Suspense, lazy, useRef } from "react";
 import { Routes, Route, Link } from "react-router-dom";
 import Navbar from "./Navbar";
 import Preloader from "./components/PreLoader.jsx";
-import OrientationWarning from "./components/OrientationWarning";
+import NotFound from "./components/NotFound.jsx";
 
 const Home = lazy(() => import("./containers/Home/index.jsx"));
 
-const NotFound = () => (
-    <div>
-        <h2>404 - Page Not Found</h2>
-        <Link to="/">Go to Home</Link>
-    </div>
-);
+const AppRoutes = () => {
+    const storyRef = useRef(null);
+    const projectsRef = useRef(null);
+    const hobbiesRef = useRef(null);
 
-const ScrollToSection = () => {
-    const location = useLocation();
+    // Scroll function
+    const scrollToSection = (elementRef) => {
+        elementRef.current.scrollIntoView({ behavior: "smooth" });
+    };
 
-    useEffect(() => {
-        const section = document.getElementById(location.hash.slice(1));
-        if (section) {
-            section.scrollIntoView({ behavior: "smooth" });
-        }
-    }, [location]);
+    return (
+        <Suspense fallback={<Preloader />}>
+            <Navbar
+                storyRef={storyRef}
+                projectsRef={projectsRef}
+                hobbiesRef={hobbiesRef}
+                scrollToSection={scrollToSection}
+            />
 
-    return null;
+            <Routes>
+                <Route
+                    path="/"
+                    element={
+                        <Home
+                            storyRef={storyRef}
+                            projectsRef={projectsRef}
+                            hobbiesRef={hobbiesRef}
+                        />
+                    }
+                />
+                <Route path="*" element={<NotFound />} />
+            </Routes>
+        </Suspense>
+    );
 };
-
-const AppRoutes = () => (
-    <Suspense fallback={<Preloader />}>
-        <Navbar />
-
-        <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="*" element={<NotFound />} />
-        </Routes>
-    </Suspense>
-);
 
 export default AppRoutes;

@@ -36,7 +36,10 @@ const CallToActionCard = () => {
     return (
         <section className="flex flex-col w-full p-4 md:p-16 text-center md:text-left ">
             <div className="rounded-2xl ">
-                <div className="flex mt-6 space-x-4 w-full flex-wrap">
+                <p className="text-gray-500 italic my-8  caveat-new text-2xl">
+                    Find me at
+                </p>
+                <div className="flex space-x-4 w-full flex-wrap">
                     {SOCIAL.map((social, index) => {
                         return (
                             <a
@@ -57,12 +60,21 @@ const CallToActionCard = () => {
                     className="bg-black mt-8 text-white py-2 px-6 rounded-full shadow-lg hover:bg-gray-800 transition duration-200"
                     onClick={() => {
                         window.open(
-                            "https://docs.google.com/document/d/19NvDSOwKRctQOiB4mSthR0SzKerzw0HAG8g5SrBzpLQ/edit?usp=sharing"
+                            "https://drive.google.com/file/d/1UOAviPDJESXE-T2yd6gSU0wLbhPUIBj0/view?usp=sharing"
                         );
                     }}
                 >
                     Download Resume (PDF)
                 </button>
+
+                <div className="text-gray-600 mt-8">
+                    <p className="text-gray-500 italic my-8  caveat-new text-2xl">
+                        Connect or Schedule a call
+                    </p>
+                    <a href="mailto: jayesh.bidani@gmail.com">
+                        jayesh.bidani@gmail.com
+                    </a>
+                </div>
             </div>
         </section>
     );
